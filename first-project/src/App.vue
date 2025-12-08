@@ -1,13 +1,13 @@
 <template>
   <div>
-    <!-- 
+    <!--
       Ref : Primitive Data Types (String, Number, Boolean)
       Reactive : Non-Primitive Data Types (Object, Array)
       v-once : Renders the element and component only once. Subsequent re-renders will not affect the element or component.
       v-if : Conditionally renders the element based on the truthiness of the expression.
       v-bind : Dynamically binds one or more attributes, or a component prop to an expression.
-     -->
-    <!-- <h1>Number is: {{ number }}</h1>
+-->
+<!--<h1>Number is: {{ number }}</h1>
     <h1 v-once>Number(using v-once) is: {{ number }}</h1>
     <h1>object :  {{ object.name }}</h1>
     <div class="box" v-if="isShow">
@@ -18,17 +18,19 @@
     <button @click="btnToggle">{{ boxStatus }}</button>
     <button @click="increaseNum">Increase Number</button>
     <button @click="changeText">Change Text</button>
-    <button @click="updateObject">Change Object</button>-->
+    <button @click="updateObject">Change Object</button> -->
     <p v-html="vHTML"></p>
     <input type="text" v-model="firstName">
     <input type="text" v-model="lastName">
     <h3>Your Full Name is: {{ fullname }}</h3>
     <button @click="increment">Increase Count Ref</button>
     <button @click="incrementReactive">Increase Count Reactive</button>
-
+    <contact-us></contact-us>
+    <ContactUs/>
   </div>
 </template>
 <script setup>
+// import ContactUs from './components/ContactUs.vue';
 import {computed, ref, reactive, watch } from 'vue';
 let firstName = ref('');
 console.log(firstName);
@@ -59,7 +61,7 @@ let fullname = computed(() => {
 // }
 
 // Watch With Ref
-let count = ref(0); 
+let count = ref(0);
 function increment() {
   count.value++;
 }
